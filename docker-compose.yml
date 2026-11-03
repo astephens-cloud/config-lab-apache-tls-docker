@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./backend
+    expose:
+      - "80"
+
+  apache:
+    image: httpd:2.4
+    ports:
+      - "8443:443"
+    volumes:
+      - ./apache/conf/lab-ssl.conf:/usr/local/apache2/conf/extra/lab-ssl.conf:ro
+      - ./apache/certs:/usr/local/apache2/certs:ro
+      - ./apache/conf/httpd-lab.conf:/usr/local/apache2/conf/httpd.conf:ro
+    depends_on:
+      - backend
