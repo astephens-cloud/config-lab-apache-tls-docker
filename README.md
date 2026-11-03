@@ -2,6 +2,17 @@
 
 This project demonstrates configuring Apache HTTP Server 2.4 in Docker as a TLS termination point and reverse proxy for an NGINX backend container. It covers local TLS certificate generation, Apache virtual host configuration, Docker Compose networking, and HTTPS connectivity validation using `curl` and `openssl`. The lab also includes troubleshooting exercises involving backend availability, certificate configuration, DNS resolution, and port conflicts, with documented root cause analysis and recovery procedures.
 
+**Quick Screenshots of the final result**
+
+Bring the docker services up from the docker-compose.yml as a basis of instruction and testing the SSL certificate data.
+![](images/docker_compose_up.png)
+
+Provides confirmation that the Apache services are up and running as intended.
+![](/images/docker_compose_logs.png)
+
+Gives us the greenlight that the container services are working as intended.
+![](/images/syntax_ok.png)
+
 ## Architecture
 
 ```text
